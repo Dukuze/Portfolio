@@ -1,0 +1,361 @@
+<h1>Test des features de Carbon</h1>
+<br>
+
+<h2>Acccordion</h2>
+<br>
+          <cds-accordion [align]="align" [size]="size">
+              <cds-accordion-item title="Section 1 title" (selected)="selected($event)">
+                  Lorem ipsum dolor sit amet, \
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore \
+                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation \
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </cds-accordion-item>
+              <cds-accordion-item title="Section 2 title" (selected)="selected($event)">
+                  Lorem ipsum dolor sit amet, \
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore \
+                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation \
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </cds-accordion-item>
+              <cds-accordion-item title="Section 3 title" (selected)="selected($event)">
+                  Lorem ipsum dolor sit amet, \
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore \
+                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation \
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </cds-accordion-item>
+          </cds-accordion>
+      
+          <br>
+          <h2>Button</h2>
+          <br>
+
+          <cds-button-set>
+            <button cdsButton="secondary" [size]="size" [isExpressive]="isExpressive">Button</button>
+            <button cdsButton [size]="size" [isExpressive]="isExpressive">Button</button>
+        </cds-button-set>
+
+        <br>
+        <h2>Check-Box</h2>
+        <br>
+
+        <fieldset class="cds--fieldset">
+            <legend class="cds--label">{{label}}</legend>
+            <cds-checkbox
+                [disabled]="disabled"
+                [indeterminate]="indeterminate"
+                [checked]="checked"
+                (checkedChange)="onChange($event)"
+                [hideLabel]="hideLabel"
+                (indeterminateChange)="onIndeterminateChange($event)">
+                Indeterminate checkbox
+            </cds-checkbox>
+        </fieldset>
+
+        <br>
+        <h2>Combo-Box</h2>
+        <br>
+
+        <cds-combo-box
+  [(ngModel)]="model"
+  [disabled]="disabled"
+  [invalid]="invalid"
+  [size]="size"
+  [appendInline]="appendInline"
+  [invalidText]="invalidText"
+  [warn]="warn"
+  [warnText]="warnText"
+  [label]="label"
+  [helperText]="helperText"
+  [items]="items"
+  [theme]="theme"
+  [dropUp]="dropUp"
+  (selected)="selected($event)"
+  (submit)="submit($event)"
+  (search)="search($event)"
+  (clear)="clear($event)"
+>
+  <cds-dropdown-list></cds-dropdown-list>
+</cds-combo-box>
+<span>{{model | json}}</span>
+
+<br>
+<h2>Contained-List</h2>
+<br>
+
+<cds-contained-list label="Hunter X Hunter">
+    <cds-contained-list-item>Gon</cds-contained-list-item>
+    <cds-contained-list-item>Kirua</cds-contained-list-item>
+    <cds-contained-list-item>Leolio</cds-contained-list-item>
+    <cds-contained-list-item>Kurapika</cds-contained-list-item>
+</cds-contained-list>
+<cds-contained-list label="Yu Yu Hakusho">
+    <cds-contained-list-item>Yusuke</cds-contained-list-item>
+    <cds-contained-list-item>Kuwabara</cds-contained-list-item>
+    <cds-contained-list-item>Hiei</cds-contained-list-item>
+    <cds-contained-list-item>Kurama</cds-contained-list-item>
+</cds-contained-list>
+
+
+<br>
+<h2>Content-Switcher</h2>
+<br>
+
+<cds-content-switcher (selected)="selected($event)">
+    <button cdsContentOption>Playstation 5</button>
+    <button cdsContentOption>Xbox Series X</button>
+    <button cdsContentOption>Nintendo Switch</button>
+</cds-content-switcher>
+
+<br>
+<h2>Context-Menu</h2>
+<br>
+
+<cds-context-menu [open]="open" [position]="position">
+    <cds-context-menu-item label="Cut" info="⌘X"></cds-context-menu-item>
+    <cds-context-menu-item
+      label="Option with icon"
+      icon="calendar"
+    ></cds-context-menu-item>
+    <cds-context-menu-divider></cds-context-menu-divider>
+    <cds-context-menu-item
+      type="checkbox"
+      label="Enable magic"
+    ></cds-context-menu-item>
+    <cds-context-menu-divider></cds-context-menu-divider>
+    <cds-context-menu-group label="Selection group">
+      <cds-context-menu-item type="checkbox" label="Blue"></cds-context-menu-item>
+      <cds-context-menu-item
+        type="checkbox"
+        label="Red"
+        [checked]="true"
+      ></cds-context-menu-item>
+      <cds-context-menu-item
+        type="checkbox"
+        label="Black"
+      ></cds-context-menu-item>
+      <cds-context-menu-item
+        type="checkbox"
+        label="Green"
+      ></cds-context-menu-item>
+    </cds-context-menu-group>
+    <cds-context-menu-divider></cds-context-menu-divider>
+    <cds-context-menu-item label="Radio flyout">
+      <cds-context-menu>
+        <cds-context-menu-group
+          type="radio"
+          [value]="radioGroupValue"
+          (valueChange)="onRadioChange($event)"
+        >
+          <cds-context-menu-item
+            type="radio"
+            label="Radio one"
+            value="one"
+          ></cds-context-menu-item>
+          <cds-context-menu-item
+            type="radio"
+            label="Radio two"
+            value="two"
+          ></cds-context-menu-item>
+          <cds-context-menu-item
+            type="radio"
+            label="Radio three"
+            value="three"
+          ></cds-context-menu-item>
+          <cds-context-menu-item
+            type="radio"
+            label="Radio four"
+            value="four"
+          ></cds-context-menu-item>
+        </cds-context-menu-group>
+      </cds-context-menu>
+    </cds-context-menu-item>
+    <cds-context-menu-item label="Checkbox flyout">
+      <cds-context-menu>
+        <cds-context-menu-group
+          type="checkbox"
+          [value]="checkboxGroupValue"
+          (valueChange)="onCheckboxChange($event)"
+        >
+          <cds-context-menu-item
+            type="checkbox"
+            label="Selectable item a"
+            value="a"
+          ></cds-context-menu-item>
+          <cds-context-menu-item
+            type="checkbox"
+            label="Selectable item b"
+            value="b"
+          ></cds-context-menu-item>
+          <cds-context-menu-item
+            type="checkbox"
+            label="Selectable item c"
+            value="c"
+          ></cds-context-menu-item>
+          <cds-context-menu-item
+            type="checkbox"
+            label="Selectable item d"
+            value="d"
+          ></cds-context-menu-item>
+        </cds-context-menu-group>
+      </cds-context-menu>
+    </cds-context-menu-item>
+  </cds-context-menu>
+
+<br>
+<h2>Date-Menu</h2>
+<br>
+
+<cds-date-picker-input
+  [theme]="theme"
+  [label]="label"
+  [placeholder]="placeholder"
+  [disabled]="disabled"
+  [disabled]="disabled"
+  [size]="size"
+  [invalid]="invalid"
+  [invalidText]="invalidText"
+  [warn]="warn"
+  [warnText]="warnText"
+  (valueChange)="valueChange($event)"
+></cds-date-picker-input>
+
+
+<br>
+<h2>Overflow-Menu</h2>
+<br>
+
+<cds-overflow-menu>
+    <cds-overflow-menu-option>Option 1</cds-overflow-menu-option>
+    <cds-overflow-menu-option>Option 2</cds-overflow-menu-option>
+</cds-overflow-menu>
+
+<br>
+<h2>Dropdown</h2>
+<br>
+
+<cds-dropdown
+  [label]="label"
+  [skeleton]="skeleton"
+  [helperText]="helperText"
+  [size]="size"
+  [dropUp]="dropUp"
+  [invalid]="invalid"
+  [invalidText]="invalidText"
+  [warn]="warn"
+  [warnText]="warnText"
+  [theme]="theme"
+  placeholder="Select"
+  [disabled]="disabled"
+  (selected)="selected($event)"
+  (onClose)="onClose($event)"
+>
+  <cds-dropdown-list [items]="items"></cds-dropdown-list>
+</cds-dropdown>
+
+
+<br>
+<h2>File-Uploader</h2>
+<br>
+
+<cds-file-uploader
+  [title]="title"
+  [description]="description"
+  [buttonText]="buttonText"
+  [buttonType]="buttonType"
+  [accept]="accept"
+  [multiple]="multiple"
+  [size]="size"
+  [fileItemSize]="fileItemSize"
+  [disabled]="disabled"
+></cds-file-uploader>
+
+<br>
+<h2>Notification</h2>
+<br>
+  
+  <cds-inline-notification
+  [notificationObj]="{
+            type: type,
+            title: 'Sample notification',
+            message: 'Sample error message',
+            showClose: showClose,
+            lowContrast: lowContrast}"
+></cds-inline-notification>
+
+<br>
+<h2>Number</h2>
+<br>
+
+<cds-number
+  [label]="label"
+  [helperText]="helperText"
+  [theme]="theme"
+  [min]="min"
+  [max]="max"
+  [step]="step"
+  [invalid]="invalid"
+  [invalidText]="invalidText"
+  [warn]="warn"
+  [warnText]="warnText"
+  [size]="size"
+  [disabled]="disabled"
+></cds-number>
+
+
+<br>
+<h2>Search</h2>
+<br>
+
+<cds-search
+  [theme]="theme"
+  [placeholder]="placeholder"
+  [autocomplete]="autocomplete"
+  [disabled]="disabled"
+  [size]="size"
+  (valueChange)="valueChange($event)"
+  [skeleton]="skeleton"
+  [expandable]="expandable"
+></cds-search>
+
+<br>
+<h2>Slider</h2>
+<br>
+
+<cds-slider></cds-slider>
+
+
+<br>
+<h2>Slider</h2>
+<br>
+
+
+<cds-structured-list
+  [condensed]="condensed"
+>
+  <cds-list-header>
+    <cds-list-column [nowrap]="true">Column 1</cds-list-column>
+    <cds-list-column [nowrap]="true">Column 2</cds-list-column>
+    <cds-list-column>Column 3</cds-list-column>
+  </cds-list-header>
+  <cds-list-row>
+    <cds-list-column>Row 1</cds-list-column>
+    <cds-list-column [nowrap]="true">Row One</cds-list-column>
+    <cds-list-column>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dui magna,
+      finibus id tortor sed, aliquet bibendum augue. Aenean posuere sem vel
+      euismod dignissim. Nulla ut cursus dolor. Pellentesque vulputate nisl a
+      porttitor interdum.
+    </cds-list-column>
+  </cds-list-row>
+  <cds-list-row>
+    <cds-list-column>Row 2</cds-list-column>
+    <cds-list-column [nowrap]="true">Row Two</cds-list-column>
+    <cds-list-column>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dui magna,
+      finibus id tortor sed, aliquet bibendum augue. Aenean posuere sem vel
+      euismod dignissim. Nulla ut cursus dolor. Pellentesque vulputate nisl a
+      porttitor interdum.
+    </cds-list-column>
+  </cds-list-row>
+</cds-structured-list>
+
+
