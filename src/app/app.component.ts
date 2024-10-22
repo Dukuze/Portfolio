@@ -144,5 +144,11 @@ export class AppComponent {
 	  nowrap: boolean = true; // ou false si le texte doit être coupé
 
 
+	  onLearnMore() {
+		// Logique à ajouter pour rediriger ou afficher plus d'infos
+		console.log('Learn More clicked');
+	  }
+
+
 
 }
