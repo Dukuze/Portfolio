@@ -13,12 +13,19 @@ import { IconModule, IconService, ThemeModule, UIShellModule, AccordionModule,
 		   NotificationModule,NumberModule,SearchModule,SliderModule,
 		   StructuredListModule
 		 } from 'carbon-components-angular';
+		 
+import { ExperienceComponent } from './experience/experience.component';
+import { SkillsComponent } from './skills/skills.component';
+import { TechnologiesComponent } from './technologies/technologies.component';
 
 
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
+  ExperienceComponent,
+  SkillsComponent,
+  TechnologiesComponent
 		
 	],
 	imports: [
